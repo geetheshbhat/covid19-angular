@@ -1,0 +1,49 @@
+
+    <div class="ui dimmer" [class.active]="loading">
+      <div class="ui loader"></div>
+    </div>
+
+
+<div class="jumbotron bg-white text-center">
+    <hr>
+    <div class="display-4">Corona Virus Tracker Countrywise</div>
+    <hr>
+    <div class="mx-auto">
+        <div class="form-control col-lg-5 mx-auto">
+            <label for="c">Select Country</label>
+            <select class="form-control" type="text" name="" id=c #input (change)="updateValue(input.value)">
+                <option value="">Select A Country</option>
+                <option value="{{coun}}" *ngFor="let coun of countries">{{coun}}</option>
+            </select>
+        </div>
+    </div>
+    <app-dashboard-card [totalConfirmed]="totalConfirmed"
+    [totalRecovered]="totalRecovered"
+    [totalActive]="totalActive"
+    [totalDeaths]="totalDeaths"></app-dashboard-card>
+
+    <!-- <div class="row">
+
+        <div class="col">
+            <google-chart></google-chart>
+
+    
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>S no.</th>
+                    <th>Date</th>
+                    <th>Cases</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cs of selectedCountryData; index as i">
+                    <th>{{i+1}}</th>
+                    <th>{{cs.date | date}}</th>
+                    <th>{{cs.cases}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <button type="button" (click)="updateChart()">click</button> 
+</div> -->
